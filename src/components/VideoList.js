@@ -5,7 +5,7 @@ const VideoList = () => {
   const videos = useSelector((state) => state.video.video);
   if (!videos) return;
   return (
-    <div className="w-10/12 flex flex-col">
+    <div className=" flex flex-col">
       <div className="flex overflow-x-auto h-10 scrollbar-hide mt-2">
         <ul className="flex">
           {list.map((i, index) => (
@@ -18,7 +18,8 @@ const VideoList = () => {
       <div className="flex flex-wrap h-screen overflow-y-scroll ml-14">
         {videos.map((video) => (
           <VideoCard
-          key={video.id}
+            key={video.id}
+            id={video.id}
             title={video.snippet.title}
             thumbnail={video.snippet.thumbnails.medium.url}
           />

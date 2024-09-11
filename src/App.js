@@ -2,6 +2,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Body from "./components/Body";
 import MainContainer from "./components/MainContainer";
 import WatchPage from "./components/WatchPage";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 function App() {
   const appRoute = createBrowserRouter([
@@ -21,7 +23,11 @@ function App() {
       },
     ],
   );
-  return <RouterProvider router={appRoute} />;
+  return (
+    <Provider store={appStore}>
+  <RouterProvider router={appRoute} />
+  </Provider>
+  );
 }
 
 export default App;

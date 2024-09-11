@@ -2,7 +2,7 @@ import React from "react";
 
 const Categories = () => {
   return (
-    <div className="w-3/12">
+    <div className="w-1/6 bg-white">
       <ul className="border border-b-slate-400 p-2">
         <li className="my-2">Home</li>
         <li className="my-2">Shorts</li>

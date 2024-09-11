@@ -32,3 +32,5 @@ export const list = [
     "Thriller",
     "Scifi",
   ];
+
+  export const LIVE_CHART_COUNT=20;
