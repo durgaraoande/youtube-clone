@@ -47,30 +47,18 @@ const Description = () => {
           <div className="flex mb-4">
             <p className="mr-4">{viewCount} views</p>
             <p>{channelSnippet?.publishedAt}</p>
-            {!showDesc && (
+          </div>
+          {showDesc && <>
+            <p className="mb-4">{channelSnippet?.description}</p>
+            <p>{data?.snippet?.description}</p></>}
               <button
                 className="bg-slate-300 p-1 mx-2 rounded-lg"
                 onClick={() => {
-                  dispatch(setShowDesc(true));
+                  dispatch(setShowDesc(!showDesc));
                 }}
               >
-                Show More
+                {(showDesc)? "Show Less":"Show More"}
               </button>
-            )}
-          </div>
-          {showDesc && (
-            <div>
-              <p>{channelSnippet?.description}</p>
-              <button
-                className=" p-1 rounded-lg"
-                onClick={() => {
-                  dispatch(setShowDesc(false));
-                }}
-              >
-                Show less
-              </button>
-            </div>
-          )}
         </div>
       </div>
     </div>
