@@ -9,7 +9,7 @@ const Header = () => {
     dispatch(toggleHamMenu());
   };
   return (
-    <div className="grid grid-flow-col shadow-md ">
+    <div className="fixed top-0 left-0 w-full z-50 grid grid-flow-col shadow-md bg-white">
       <div className="flex col-span-1">
         <img
           className="h-10 p-2 mx-2 my-5 "

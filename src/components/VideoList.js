@@ -19,9 +19,7 @@ const VideoList = () => {
         {videos.map((video) => (
           <VideoCard
             key={video.id}
-            id={video.id}
-            title={video.snippet.title}
-            thumbnail={video.snippet.thumbnails.medium.url}
+            video={video}
           />
         ))}
       </div>
