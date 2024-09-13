@@ -5,7 +5,8 @@ const videoSlice=createSlice({
     initialState:{
         video:null,
         currentVideo:null,
-        channelDetails:null
+        channelDetails:null,
+        comments:null,
     },
     reducers:{
         setVideo:(state,action)=>{
@@ -16,10 +17,13 @@ const videoSlice=createSlice({
         },
         setChannelDetails:(state,action)=>{
             state.channelDetails=action.payload;
-        }
+        },
+        setCurrentVideoComments:(state,action)=>{
+            state.comments=action.payload;
+        },
     }
 })
 
-export const {setVideo,setCurrentVideoData,setChannelDetails}=videoSlice.actions;
+export const {setVideo,setCurrentVideoData,setChannelDetails,setCurrentVideoComments}=videoSlice.actions;
 
 export default videoSlice.reducer;

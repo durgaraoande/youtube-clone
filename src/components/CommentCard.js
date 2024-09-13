@@ -8,7 +8,7 @@ const CommentCard = ({
 }) => {
   return (
     <div>
-      <div className="ml-16 flex bg-slate-50 rounded-lg shadow-sm p-2">
+      <div className="ml-16 flex  rounded-lg shadow-md p-2 w-[906px] ">
         <img
           className="rounded-full h-12"
           src={authorProfileImageUrl}
@@ -16,8 +16,8 @@ const CommentCard = ({
         />
         <div className="">
           <div className="flex ">
-          <h1 className="mx-6">{authorDisplayName}</h1>
-          <p>{publishedAt}</p>
+            <h1 className="mx-6 font-bold mb-3">{authorDisplayName}</h1>
+            <p>{publishedAt}</p>
           </div>
           <p className="ml-4">{textDisplay}</p>
         </div>

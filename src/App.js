@@ -19,6 +19,10 @@ function App() {
             path: "/watch/:id",
             element: <WatchPage />,
           },
+          {
+            path:"results",
+            element:<MainContainer/>
+          }
         ],
       },
     ],

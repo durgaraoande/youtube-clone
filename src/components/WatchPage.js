@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import LiveChat from "./LiveChat";
 import Description from "./Description";
 import Comments from "./Comments";
+import { useDispatch } from "react-redux";
+import { clearMessages } from "../utils/chatSlice";
 
 const WatchPage = () => {
+  const dispatch=useDispatch();
   const { id } = useParams();
+    useEffect(() => {
+    return () => dispatch(clearMessages());
+  }, []);
   return (
     <div className="absolute m-3 -z-20 ">
       <div className="flex">
