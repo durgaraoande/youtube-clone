@@ -12,7 +12,8 @@ const LiveChat = () => {
     
     useEffect(()=>{
         //Api Polling
-        if(!comments) {return;}
+        if(!comments) return;
+        console.log("comments"+comments)
         const timer=setInterval(() => {
             const comment=comments[Math.floor(Math.random()*comments.length)]
             dispatch(setMessages({
