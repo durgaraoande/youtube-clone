@@ -1,5 +1,4 @@
-# Workflow for building and deploying a Node.js application to GitHub Pages
-name: Deploy Node.js App with GitHub Pages
+name: Deploy YouTube Clone App with GitHub Pages
 
 on:
   # Trigger on pushes to the default branch
@@ -25,28 +24,34 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Checkout code
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
-      
+
       # Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "16" # Use the appropriate Node.js version for your app
+          node-version: "16" # Adjust based on your Node.js version
 
       # Install dependencies
       - name: Install dependencies
         run: npm install
+
+      # Set environment variables securely (optional)
+      - name: Set environment variables
+        run: |
+          echo "REACT_APP_API_KEY=${{ secrets.REACT_APP_API_KEY }}" >> $GITHUB_ENV
+          echo "REACT_APP_YOUTUBE_API_KEY=${{ secrets.REACT_APP_YOUTUBE_API_KEY }}" >> $GITHUB_ENV
 
       # Build the application
       - name: Build the application
         run: npm run build
 
       # Upload build artifacts
-      - name: Upload artifact
+      - name: Upload build artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./build # Adjust the path if your build output is in a different folder
+          path: ./build # Ensure this points to your build directory
 
   # Deployment job
   deploy:
