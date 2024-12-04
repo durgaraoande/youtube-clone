@@ -43,5 +43,7 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.4.10"
-  }
+  },
+  "homepage": "https://durgaraoande.github.io/youtube-clone"
+
 }
