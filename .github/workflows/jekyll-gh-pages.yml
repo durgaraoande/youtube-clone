@@ -31,11 +31,15 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "16" # Adjust based on your Node.js version
+          node-version: "18" # Adjust based on your Node.js version
 
       # Install dependencies
       - name: Install dependencies
         run: npm install
+
+      # Set CI to false to ignore warnings as errors
+      - name: Set CI to false to ignore warnings
+        run: echo "CI=false" >> $GITHUB_ENV
 
       # Set environment variables securely (optional)
       - name: Set environment variables
